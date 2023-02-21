@@ -1,6 +1,7 @@
 package com.proxyy.proxy;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +15,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/lookoutwebhook")
 public class TestWebHook {
 	
+	
+	////testing push
+	
 	@PostMapping("/readEvent")
-	public String apllyRegExOnData(@RequestBody String filePolicy,@RequestHeader(value="X-GitHub-Event") String userAgent) throws IOException, InterruptedException {
+	public String apllyRegExOnData(@RequestBody String filePolicy,@RequestHeader(value="X-GitHub-Event") String userAgent,@RequestHeader Map<String, String> headers) throws IOException, InterruptedException {
 		System.out.println(userAgent+ " ::: "+filePolicy);
+		//commenting following sysout
+		//System.out.println("Headers"+ " ::: "+headers);
 		return "";
 	}
 }
